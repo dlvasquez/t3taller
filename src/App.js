@@ -444,7 +444,7 @@ class App extends React.Component {
         }
         if (listaPrices.length > 1) {
           altoHistorico = Math.max(...listaPrices.map(o => o.value), null);
-          bajoHistorico = Math.min(...listaPrices.map(o => o.value), null);
+          bajoHistorico = Math.min(...listaPrices.map(o => o.value));
           ultimoPrecio = listaPrices[listaPrices.length - 1].value;
           if (listaPrices.length > 2) {
             varPorcentual = Number((ultimoPrecio - listaPrices[listaPrices.length - 2].value) / listaPrices[listaPrices.length - 2].value * 100).toPrecision(2);
