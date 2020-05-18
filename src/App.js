@@ -20,6 +20,7 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import Button from '@material-ui/core/Button';
 import './App.css';
 
 var moment = require('moment'); // require
@@ -54,9 +55,10 @@ class App extends React.Component {
       events: [],
       sells: [],
       buys: [],
-      indicadoresStock: {}
-
+      indicadoresStock: {},
+      conexion: 1
     };
+    this.handleClick = this.handleClick.bind(this);
   }
 
   // const App = ({ }) => {
@@ -410,6 +412,26 @@ class App extends React.Component {
   }
 
 
+  handleClick() {
+    if (this.state.conexion === 1) {
+      this.setState(state => ({
+        conexion: 0
+      }));
+
+      if (this.state.socket) {
+        this.state.socket.disconnect()
+      }
+    }
+    else {
+      this.setState(state => ({
+        conexion: 1
+      }));
+      if (this.state.socket) {
+        this.initSocket()
+      }
+    }
+
+  }
 
 
   stockIndices() {
@@ -493,6 +515,9 @@ class App extends React.Component {
       <div>
         <h1>Tarea 3</h1>
 
+        <Button onClick={this.handleClick} variant="contained" color="primary">
+          {this.state.conexion ? 'Desconectar' : 'Conectar'}
+        </Button>
         <Grid container spacing={10}>
           {/* <ul> */}
           {items}
