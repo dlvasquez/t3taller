@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+
+
+.root {
+  flex-grow: 1,
+}
+.table {
+  /* min-width: 100px; */
+  width:400;
+}

@@ -20,6 +20,7 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import './App.css';
 
 var moment = require('moment'); // require
 moment().format();
@@ -108,7 +109,7 @@ class App extends React.Component {
         'id': id++,
         'ticker': newEvents.ticker,
         'value': newEvents.value,
-        'time': moment(newEvents.time).format()
+        'time': moment(newEvents.time).format('MMMM Do YYYY, h:mm:ss a')
       }
 
       this.setState(prevState => ({
@@ -154,6 +155,80 @@ class App extends React.Component {
 
   }
 
+  tablaStockInfo() {
+    // const classes = useStyles()
+    const mercados = this.state.STOCKS;
+    if (mercados) {
+      return (
+        <Grid item xs={6}>
+          <TableContainer style={{ width: '650px' }} component={Paper}>
+            <Table style={{ width: '650px' }} size="small" aria-label="a dense table">
+              <TableHead>
+                <TableRow>
+                  <TableCell>Stocks</TableCell>
+                  <TableCell align="right">Nombre Compañia&nbsp;</TableCell>
+                  <TableCell align="right">País&nbsp;</TableCell>
+                  <TableCell align="right">Moneda&nbsp;</TableCell>
+
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {mercados.map((row) => (
+                  <TableRow key={row.ticker}>
+                    <TableCell component="th" scope="row">
+                      {row.ticker}
+                    </TableCell>
+                    <TableCell align="right">{row.company_name}</TableCell>
+                    <TableCell align="right">{row.country}</TableCell>
+                    <TableCell align="right">{row.quote_base}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
+        </Grid>
+      )
+    }
+  }
+
+  tablaMercadoInfo() {
+    // const classes = useStyles()
+    const mercados = this.state.EXCHANGES;
+    if (mercados) {
+      return (
+        <Grid item xs={6}>
+          <TableContainer style={{ width: '650px' }} component={Paper}>
+            <Table style={{ width: '650px' }} size="small" aria-label="a dense table">
+              <TableHead>
+                <TableRow>
+                  <TableCell>Mercados</TableCell>
+                  <TableCell align="right">Exchange Ticker&nbsp;</TableCell>
+                  <TableCell align="right">País&nbsp;</TableCell>
+                  <TableCell align="right">Dirección&nbsp;</TableCell>
+                  <TableCell align="right">Listado Compañías&nbsp;</TableCell>
+
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {mercados.map((row) => (
+                  <TableRow key={row.name}>
+                    <TableCell component="th" scope="row">
+                      {row.name}
+                    </TableCell>
+                    <TableCell align="right">{row.exchange_ticker}</TableCell>
+                    <TableCell align="right">{row.country}</TableCell>
+                    <TableCell align="right">{row.address}</TableCell>
+                    <TableCell align="right">{row.listed_companies}</TableCell>
+
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
+        </Grid>
+      )
+    }
+  }
 
 
 
@@ -163,34 +238,37 @@ class App extends React.Component {
     // const classes = useStyles();
     if (indicadoresMercado) {
       return (
-        <TableContainer component={Paper}>
-          <Table size="small" aria-label="a dense table">
-            <TableHead>
-              <TableRow>
-                <TableCell>Mercados</TableCell>
-                <TableCell align="right">Volumen Compra&nbsp;($)</TableCell>
-                <TableCell align="right">Volumen Venta&nbsp;($)</TableCell>
-                <TableCell align="right">Volumen Total&nbsp;($)</TableCell>
-                <TableCell align="right">Cantidad Acciones&nbsp;</TableCell>
-                <TableCell align="right">Participación Mercado&nbsp;(%)</TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {indicadoresMercado.map((row) => (
-                <TableRow key={row.nameCortoMercado}>
-                  <TableCell component="th" scope="row">
-                    {row.nameCortoMercado}
-                  </TableCell>
-                  <TableCell align="right">{row.volCompra}</TableCell>
-                  <TableCell align="right">{row.volVenta}</TableCell>
-                  <TableCell align="right">{row.volTotal}</TableCell>
-                  <TableCell align="right">{row.cantidadAcciones}</TableCell>
-                  <TableCell align="right">{row.partMercado}</TableCell>
+        <Grid item xs={6}>
+          <TableContainer style={{ width: '650px' }} component={Paper}>
+            <Table style={{ width: '650px' }} size="small" aria-label="a dense table">
+              <TableHead>
+                <TableRow>
+                  <TableCell>Mercados</TableCell>
+                  <TableCell align="right">Volumen Compra&nbsp;($)</TableCell>
+                  <TableCell align="right">Volumen Venta&nbsp;($)</TableCell>
+                  <TableCell align="right">Volumen Total&nbsp;($)</TableCell>
+                  <TableCell align="right">Cantidad Acciones&nbsp;</TableCell>
+                  <TableCell align="right">Participación Mercado&nbsp;(%)</TableCell>
+
                 </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </TableContainer>
+              </TableHead>
+              <TableBody>
+                {indicadoresMercado.map((row) => (
+                  <TableRow key={row.nameCortoMercado}>
+                    <TableCell component="th" scope="row">
+                      {row.nameCortoMercado}
+                    </TableCell>
+                    <TableCell align="right">{row.volCompra}</TableCell>
+                    <TableCell align="right">{row.volVenta}</TableCell>
+                    <TableCell align="right">{row.volTotal}</TableCell>
+                    <TableCell align="right">{row.cantidadAcciones}</TableCell>
+                    <TableCell align="right">{row.partMercado}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
+        </Grid>
       )
     }
   }
@@ -210,34 +288,38 @@ class App extends React.Component {
     // const classes = useStyles();
     if (indicadoresStock) {
       return (
-        <TableContainer component={Paper}>
-          <Table size="small" aria-label="a dense table">
-            <TableHead>
-              <TableRow>
-                <TableCell>Stocks</TableCell>
-                <TableCell align="right">Volumen Total Transado</TableCell>
-                <TableCell align="right">Alto Histórico&nbsp;($)</TableCell>
-                <TableCell align="right">Bajo Histórico&nbsp;($)</TableCell>
-                <TableCell align="right">Último Precio&nbsp;($)</TableCell>
-                <TableCell align="right">Variación Porcentual&nbsp;(%)</TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {indicadoresStock.map((row) => (
-                <TableRow key={row.nameStock}>
-                  <TableCell component="th" scope="row">
-                    {row.nameStock}
-                  </TableCell>
-                  <TableCell align="right">{row.totalTransado}</TableCell>
-                  <TableCell align="right">{row.altoHistorico}</TableCell>
-                  <TableCell align="right">{row.bajoHistorico}</TableCell>
-                  <TableCell align="right">{row.ultimoPrecio}</TableCell>
-                  <TableCell align="right">{row.varPorcentual}</TableCell>
+        <Grid item xs={6}>
+
+          <TableContainer style={{ width: 650 }} component={Paper}>
+            <Table style={{ width: 650 }} size="small" aria-label="a dense table">
+              <TableHead>
+                <TableRow>
+                  <TableCell>Stocks</TableCell>
+                  <TableCell align="right">Volumen Total Transado</TableCell>
+                  <TableCell align="right">Alto Histórico&nbsp;($)</TableCell>
+                  <TableCell align="right">Bajo Histórico&nbsp;($)</TableCell>
+                  <TableCell align="right">Último Precio&nbsp;($)</TableCell>
+                  <TableCell align="right">Variación Porcentual&nbsp;(%)</TableCell>
                 </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </TableContainer>
+              </TableHead>
+              <TableBody>
+                {indicadoresStock.map((row) => (
+                  <TableRow key={row.nameStock}>
+                    <TableCell component="th" scope="row">
+                      {row.nameStock}
+                    </TableCell>
+                    <TableCell align="right">{row.totalTransado}</TableCell>
+                    <TableCell align="right">{row.altoHistorico}</TableCell>
+                    <TableCell align="right">{row.bajoHistorico}</TableCell>
+                    <TableCell align="right">{row.ultimoPrecio}</TableCell>
+                    <TableCell align="right">{row.varPorcentual}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
+        </Grid>
+
       )
     }
   }
@@ -390,7 +472,7 @@ class App extends React.Component {
         items.push(
           <Grid item xs={3}>
             <div>
-              <h3>Real Time {this.state.STOCKS[i].ticker} </h3>
+              <h4>Precio {this.state.STOCKS[i].ticker} </h4>
               <LineChart key={i} width={300} height={250} data={this.state.events.filter(e =>
                 e.ticker === this.state.STOCKS[i].ticker)}>
                 <XAxis dataKey="time" />
@@ -417,16 +499,17 @@ class App extends React.Component {
 
           {/* </ul> */}
         </Grid>
+        <Grid container spacing={10}>
 
-        <ul>
           {this.tablaIndicesStock(indicadoresStock)}
 
-        </ul>
 
-        <ul>
           {this.tablaIndicesMercado(indicadoresMercado)}
 
-        </ul>
+          {this.tablaMercadoInfo()}
+
+          {this.tablaStockInfo()}
+        </Grid>
       </div>
     );
   };
