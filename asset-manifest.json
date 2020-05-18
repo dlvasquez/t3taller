@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/t3taller/static/css/main.e61986e2.chunk.css",
-    "main.js": "/t3taller/static/js/main.fb9ddaee.chunk.js",
-    "main.js.map": "/t3taller/static/js/main.fb9ddaee.chunk.js.map",
+    "main.js": "/t3taller/static/js/main.97c40112.chunk.js",
+    "main.js.map": "/t3taller/static/js/main.97c40112.chunk.js.map",
     "runtime-main.js": "/t3taller/static/js/runtime-main.8174d527.js",
     "runtime-main.js.map": "/t3taller/static/js/runtime-main.8174d527.js.map",
     "static/js/2.da38b424.chunk.js": "/t3taller/static/js/2.da38b424.chunk.js",
     "static/js/2.da38b424.chunk.js.map": "/t3taller/static/js/2.da38b424.chunk.js.map",
     "index.html": "/t3taller/index.html",
-    "precache-manifest.a5c649df4069f3d1b6c6f960313dce7e.js": "/t3taller/precache-manifest.a5c649df4069f3d1b6c6f960313dce7e.js",
+    "precache-manifest.2e0a339357ef97ce36f0933f97c7ca63.js": "/t3taller/precache-manifest.2e0a339357ef97ce36f0933f97c7ca63.js",
     "service-worker.js": "/t3taller/service-worker.js",
     "static/css/main.e61986e2.chunk.css.map": "/t3taller/static/css/main.e61986e2.chunk.css.map",
     "static/js/2.da38b424.chunk.js.LICENSE.txt": "/t3taller/static/js/2.da38b424.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.8174d527.js",
     "static/js/2.da38b424.chunk.js",
     "static/css/main.e61986e2.chunk.css",
-    "static/js/main.fb9ddaee.chunk.js"
+    "static/js/main.97c40112.chunk.js"
   ]
 }
