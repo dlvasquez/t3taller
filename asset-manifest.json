@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/t3taller/static/css/main.71b2c3fd.chunk.css",
-    "main.js": "/t3taller/static/js/main.fb3aba73.chunk.js",
-    "main.js.map": "/t3taller/static/js/main.fb3aba73.chunk.js.map",
+    "main.css": "/t3taller/static/css/main.e61986e2.chunk.css",
+    "main.js": "/t3taller/static/js/main.fb9ddaee.chunk.js",
+    "main.js.map": "/t3taller/static/js/main.fb9ddaee.chunk.js.map",
     "runtime-main.js": "/t3taller/static/js/runtime-main.8174d527.js",
     "runtime-main.js.map": "/t3taller/static/js/runtime-main.8174d527.js.map",
-    "static/js/2.84cab408.chunk.js": "/t3taller/static/js/2.84cab408.chunk.js",
-    "static/js/2.84cab408.chunk.js.map": "/t3taller/static/js/2.84cab408.chunk.js.map",
+    "static/js/2.da38b424.chunk.js": "/t3taller/static/js/2.da38b424.chunk.js",
+    "static/js/2.da38b424.chunk.js.map": "/t3taller/static/js/2.da38b424.chunk.js.map",
     "index.html": "/t3taller/index.html",
-    "precache-manifest.b470b75ae31403f6e442feb3025c1710.js": "/t3taller/precache-manifest.b470b75ae31403f6e442feb3025c1710.js",
+    "precache-manifest.a5c649df4069f3d1b6c6f960313dce7e.js": "/t3taller/precache-manifest.a5c649df4069f3d1b6c6f960313dce7e.js",
     "service-worker.js": "/t3taller/service-worker.js",
-    "static/css/main.71b2c3fd.chunk.css.map": "/t3taller/static/css/main.71b2c3fd.chunk.css.map",
-    "static/js/2.84cab408.chunk.js.LICENSE.txt": "/t3taller/static/js/2.84cab408.chunk.js.LICENSE.txt"
+    "static/css/main.e61986e2.chunk.css.map": "/t3taller/static/css/main.e61986e2.chunk.css.map",
+    "static/js/2.da38b424.chunk.js.LICENSE.txt": "/t3taller/static/js/2.da38b424.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.8174d527.js",
-    "static/js/2.84cab408.chunk.js",
-    "static/css/main.71b2c3fd.chunk.css",
-    "static/js/main.fb3aba73.chunk.js"
+    "static/js/2.da38b424.chunk.js",
+    "static/css/main.e61986e2.chunk.css",
+    "static/js/main.fb9ddaee.chunk.js"
   ]
 }
